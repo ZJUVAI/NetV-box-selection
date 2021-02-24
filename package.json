@@ -1,0 +1,27 @@
+{
+  "name": "netv-box-selection",
+  "version": "1.0.0",
+  "description": "box selection plugin for NetV.js",
+  "main": "dist/netv-box-selection.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZJUVAG/NetV-box-selection.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZJUVAG/NetV-box-selection/issues"
+  },
+  "homepage": "https://github.com/ZJUVAG/NetV-box-selection#readme",
+  "devDependencies": {
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  }
+}

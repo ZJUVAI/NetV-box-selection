@@ -8,7 +8,7 @@ Box selection plugin for NetV.js(http://netv.zjuvag.org/)
 
 ### `boxSelection = new BoxSelection(netv, configs)`
 
-Create lasso handler
+Create boxSelection handler
 
 * `netv: NetV`: pass core NetV object
 * `configs: {}`: key-value pair configs

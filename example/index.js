@@ -4,9 +4,14 @@
  */
 const netv = new NetV({
     container: document.getElementById('main'),
+    node: {
+        style: {
+            r: 8,
+        }
+    },
     link: {
         style: {
-            strokeWidth: 1
+            strokeWidth: 1,
         }
     }
 })
@@ -40,4 +45,7 @@ netv.on('zoom', () => { })
 const boxSelection = new BoxSelection(netv, { enable: true })
 boxSelection.onSelected((selectedItems) => {
     console.log(selectedItems)
+    netv.nodes().forEach(n => n.r(8))
+    selectedItems.forEach(n => n.r(12))
+    netv.draw()
 })

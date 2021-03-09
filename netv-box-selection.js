@@ -71,6 +71,8 @@ export class BoxSelection {
         const y = evt.offsetY
 
         this._initPos = { x, y }
+        this._rectParams.w = 0
+        this._rectParams.h = 0
     }
 
     _onMouseMove(evt) {

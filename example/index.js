@@ -42,7 +42,12 @@ netv.draw()
 netv.on('pan', () => { })
 netv.on('zoom', () => { })
 
-const boxSelection = new BoxSelection(netv, { enable: true })
+const boxSelection = new BoxSelection(netv, {
+    enable: true,
+    boxStyle: {
+        'stroke-dasharray': [5, 5]
+    }
+})
 boxSelection.onSelected((selectedItems) => {
     console.log(selectedItems)
     netv.nodes().forEach(n => n.r(8))

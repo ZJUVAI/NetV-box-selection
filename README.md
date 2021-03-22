@@ -13,6 +13,11 @@ Create boxSelection handler
 * `netv: NetV`: pass core NetV object
 * `configs: {}`: key-value pair configs
     * `enable: bool`: default enable box-selection or not
+    * `boxStyle: {}`: selection box's style (below is supported attribute and their default value)
+        * `fill`: `rgba(200, 200, 200, 0.2)`,
+        * `stroke`: `black`,
+        * `stroke-width`: `1`,
+        * `stroke-dasharray`: `[]`
 
 ### `boxSelection.dispose()`
 

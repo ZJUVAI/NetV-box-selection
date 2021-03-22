@@ -23,6 +23,13 @@ export class BoxSelection {
         this._width = netv.$_configs.width
         this._height = netv.$_configs.height
 
+        this._rectStyle = Object.assign({}, {
+            'fill': 'rgba(200, 200, 200, 0.2)',
+            'stroke': 'black',
+            'stroke-width': 1,
+            'stroke-dasharray': [],
+        }, configs.boxStyle)
+
         // this._pathPoints = []
         this._initPos = { x: 0, y: 0 }
         this._rectParams = {
@@ -60,9 +67,10 @@ export class BoxSelection {
     _onMouseDown(evt) {
         this._selecting = true
         this._rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        this._rect.setAttribute('fill', 'rgba(200, 200, 200, 0.2)');
-        this._rect.setAttribute('stroke', 'black');
-        this._rect.setAttribute('stroke-width', 1);
+        this._rect.setAttribute('fill', this._rectStyle['fill']);
+        this._rect.setAttribute('stroke', this._rectStyle['stroke']);
+        this._rect.setAttribute('stroke-width', this._rectStyle['stroke-width']);
+        this._rect.setAttribute('stroke-dasharray', this._rectStyle['stroke-dasharray']);
         // this._rect.setAttribute('stroke-linejoin', 'round');
         // this._rect.setAttribute('stroke-linecap', 'round');
         this.$_svg.appendChild(this._rect);

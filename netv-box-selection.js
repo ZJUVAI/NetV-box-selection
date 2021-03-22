@@ -65,6 +65,10 @@ export class BoxSelection {
     }
 
     _onMouseDown(evt) {
+        if (evt.button !== 0) {
+            // must select with left button
+            return
+        }
         this._selecting = true
         this._rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         this._rect.setAttribute('fill', this._rectStyle['fill']);
@@ -84,6 +88,10 @@ export class BoxSelection {
     }
 
     _onMouseMove(evt) {
+        if (evt.button !== 0) {
+            // must select with left button
+            return
+        }
         if (!this._selecting) return
         const x = evt.offsetX
         const y = evt.offsetY
@@ -98,6 +106,10 @@ export class BoxSelection {
     }
 
     _onMouseUp(evt) {
+        if (evt.button !== 0) {
+            // must select with left button
+            return
+        }
         this._rect.remove()
         this._getSelectedItems()
         this._selectedCallback && this._selectedCallback(this._selectedItems)

@@ -37,10 +37,13 @@ export class BoxSelection {
         }
         this._selectedItems = []
         this._selectedCallback = null
+        this._onMouseDown = this._onMouseDown.bind(this)
+        this._onMouseMove = this._onMouseMove.bind(this)
+        this._onMouseUp = this._onMouseUp.bind(this)
 
-        this.$_svg.addEventListener('mousedown', this._onMouseDown.bind(this))
-        this.$_svg.addEventListener('mousemove', this._onMouseMove.bind(this))
-        this.$_svg.addEventListener('mouseup', this._onMouseUp.bind(this))
+        window.addEventListener('mousedown', this._onMouseDown)
+        window.addEventListener('mousemove', this._onMouseMove)
+        window.addEventListener('mouseup', this._onMouseUp)
 
         // check config to decide enable it or not
         if (configs && configs.enable === true) {
@@ -50,6 +53,9 @@ export class BoxSelection {
 
     dispose() {
         this.$_svg.remove()
+        window.removeEventListener('mousedown', this._onMouseDown)
+        window.removeEventListener('mousemove', this._onMouseMove)
+        window.removeEventListener('mouseup', this._onMouseUp)
     }
 
     enable() {
